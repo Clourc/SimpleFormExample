@@ -1,0 +1,48 @@
+<form #myForm="ngForm" (ngSubmit)="onSubmit()">
+  <fieldset>
+    <label for="firstName">First Name :</label>
+    <input
+      type="text"
+      name="firstName"
+      id="firstName"
+      [(ngModel)]="user.firstName"
+      required
+    />
+  </fieldset>
+
+  <fieldset>
+    <label for="lastName">Last Name :</label>
+    <input
+      type="text"
+      name="lastName"
+      id="lastName"
+      [(ngModel)]="user.lastName"
+      required
+    />
+  </fieldset>
+
+  <fieldset>
+    <label for="age">Age :</label>
+    <input type="number" name="age" id="age" [(ngModel)]="user.age" required />
+  </fieldset>
+
+  <fieldset>
+    <label for="dateOfBirth">Date of Birth :</label>
+    <input
+      type="date"
+      name="dateOfBirth"
+      id="dateOfBirth"
+      [(ngModel)]="user.dateOfBirth"
+      required
+    />
+  </fieldset>
+
+  <button type="submit">Submit</button>
+</form>
+
+<div *ngIf="myForm.submitted" id="show-user">
+    <span>{{user.firstName}}</span>
+    <span>{{user.lastName}}</span>
+    <span>{{user.age}}</span>
+    <span>{{user.dateOfBirth}}</span>
+</div>
